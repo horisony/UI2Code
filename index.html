@@ -57,6 +57,9 @@
       font-size: 14px;
       line-height: 100%;
     }
+    .pTxt-small{
+      color: #999;
+    }
     .padLeft{
       padding-left: 15px;
     }
@@ -81,6 +84,43 @@
     .flex-center{
       justify-content: center;
     }
+    .arrow-right{
+      width: 6px;
+      height: 11px;
+      background-image: url(image/arrow-right@2x.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      float:right;
+    }
+    .toRight{
+      float: right;
+      align-items: flex-end;
+      text-align: right;
+    }
+    .toLeft{
+      float: left;
+      text-align: left;
+    }
+    .switch{
+      width: 51px;
+      height: 31px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      float:right;
+    }
+    .switch-on{
+       background-image: url(image/switch-on@2x.png);
+    }
+    .switch-off{
+      background-image: url(image/switch-off@2x.png);
+    }
+    /*.divide{
+      width: 100%;
+      height: 20px;
+      padding: 20px;
+      background: #f6f6f6;
+      border-bottom: 1px solid #eee;
+    }*/
   </style>
     
 
@@ -97,6 +137,44 @@
       )
     }
 
+    function ListA(txt){
+      return (
+        <div className="list flex flex-center-vertical">
+          <p className="pTxt flex-1 padLeft">{txt.name}</p>
+          <div className="arrow-right flext-1 padRight"></div>
+        </div> 
+      )
+    }
+
+    function ListAT(txt){
+      return (
+        <div className="list flex flex-center-vertical">
+          <p className="pTxt flex-1 padLeft">{txt.name1}</p>
+          <p className="pTxt pTxt-small flex-1 padRight toRight">{txt.name2}</p>
+          <div className="arrow-right flext-1 padRight"></div>
+        </div> 
+      )
+    }
+
+    function ListSON(txt){
+      return (
+        <div className="list flex flex-center-vertical">
+          <p className="pTxt flex-1 padLeft">{txt.name}</p>
+          <div className="switch switch-on flext-1 padRight"></div>
+        </div> 
+      )
+    }
+
+    function ListSOFF(txt){
+      return (
+        <div className="list flex flex-center-vertical">
+          <p className="pTxt flex-1 padLeft">{txt.name}</p>
+          <div className="switch switch-off flext-1 padRight"></div>
+        </div> 
+      )
+    }
+
+   
     function Btn1(txt){
       return (
         <div className="btn btn1 flex flex-center-vertical">
@@ -124,6 +202,11 @@
           <ListR name = "列表"/> 
           <ListR name = "列表"/> 
           <ListR name = "列表"/> 
+          <ListA name = "带箭头的列表"/> 
+          <ListAT name1 = "带箭头和提示字的列表" name2="未设置"/> 
+          <ListSON name = "带开关的列表-开"/> 
+          <ListSOFF name = "带开关的列表-关"/> 
+      
           <Btn1 name = "按钮"/> 
           <Btn2 name1 = "按钮" name2 = "按钮"/> 
         </div>
