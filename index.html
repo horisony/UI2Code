@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello React!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+  <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+  <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+
+  <style type="text/css">
+    body{
+      padding: 0;
+      margin: 0;
+      font-family: "Microsoft Yahei";
+    }
+    .btn{
+      /*border: 1px solid #ddd;*/
+      border-radius: 4px;
+      /*padding: 10px;*/
+      height: 44px;
+      text-align: center;
+      background: #33C7B6;
+      color: white;
+      margin-top: 12px;
+    }
+    .btn1{
+      width: calc(100%-30px);
+      margin-left: 15px;
+      margin-right: 15px;
+      align-items: middle;
+    }
+    .btn2_1{
+      width: calc(50%-21px);
+      margin-left: 15px;
+      margin-right: 6px;
+      float:left;
+      background: transparent;
+      border: 1px solid #33C7B6;
+      color: #33C7B6;
+    }
+    .btn2_2{
+      width: calc(50%-21px);
+      margin-left: 6px;
+      margin-right: 15px;
+      float:left;
+    }
+    .list{
+      border-bottom: 1px solid #eee;
+      padding: 0;
+      height: 45px;
+    }
+    .list-arrow{
+      float: right;
+    }
+    .pTxt{
+      font-size: 14px;
+      line-height: 100%;
+    }
+    .padLeft{
+      padding-left: 15px;
+    }
+    .padRight{
+      padding-right: 15px;
+    }
+    .alignCt{
+      text-align: center;
+    }
+    .clearfix{
+      clear: both;
+    }
+    .flex{
+      display: flex;
+    }
+    .flex-1{
+      flex: 1;
+    }
+    .flex-center-vertical{
+      align-items: center;
+    }
+    .flex-center{
+      justify-content: center;
+    }
+  </style>
+    
+
+</head>
+<body>
+  <div id="example"></div>
+  <script type="text/babel">
+    
+    function ListR(txt){
+      return (
+        <div className="list flex flex-center-vertical">
+          <p className="pTxt padLeft">{txt.name}</p>
+        </div> 
+      )
+    }
+
+    function Btn1(txt){
+      return (
+        <div className="btn btn1 flex flex-center-vertical">
+          <p className="pTxt flex-1">{txt.name}</p>
+        </div>
+      )
+    }
+
+    function Btn2(txt){
+      return(
+        <div className="clearfix flex">
+          <div className="btn btn2_1 flex flex-1 flex-center-vertical flex-center">
+            <p className="pTxt flex">{txt.name1}</p>
+          </div>
+          <div className="btn btn2_2 flex flex-1 flex-center-vertical flex-center">
+            <p className="pTxt flex">{txt.name2}</p>
+          </div>
+        </div>
+      )
+    }
+
+    function App(){
+      return (
+        <div>
+          <ListR name = "列表"/> 
+          <ListR name = "列表"/> 
+          <ListR name = "列表"/> 
+          <Btn1 name = "按钮"/> 
+          <Btn2 name1 = "按钮" name2 = "按钮"/> 
+        </div>
+      );
+    }
+
+    ReactDOM.render(
+      <App />,
+      document.getElementById('example')
+    );
+  </script>
+</body>
+</html>
